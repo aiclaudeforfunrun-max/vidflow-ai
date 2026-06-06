@@ -1,7 +1,7 @@
 export const registerUser = async (userData) => {
 
   const response = await fetch(
-    "http://localhost:5000/api/auth/register",
+    "https://vidflow-ai-production.up.railway.app/api/auth/register",
     {
       method: "POST",
 
@@ -19,7 +19,7 @@ export const registerUser = async (userData) => {
 export const loginUser = async (userData) => {
 
   const response = await fetch(
-    "http://localhost:5000/api/auth/login",
+    "https://vidflow-ai-production.up.railway.app/api/auth/login",
     {
       method: "POST",
 

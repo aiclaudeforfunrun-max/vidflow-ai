@@ -26,7 +26,7 @@ export default function Admin() {
   async function fetchUsers() {
     setLoading(true);
     try {
-      const res  = await fetch("http://localhost:5000/api/admin/users");
+      const res  = await fetch("https://vidflow-ai-production.up.railway.app/api/admin/users");
       const data = await res.json();
       if (data.success) setUsers(data.users);
     } catch (err) {
@@ -37,7 +37,7 @@ export default function Admin() {
 
   async function toggleBlock(id) {
     try {
-      const res  = await fetch(`http://localhost:5000/api/admin/users/${id}/block`, { method: "PUT" });
+      const res  = await fetch(`https://vidflow-ai-production.up.railway.app/api/admin/users/${id}/block`, { method: "PUT" });
       const data = await res.json();
       if (data.success) {
         setMsg(data.message);
@@ -51,7 +51,7 @@ export default function Admin() {
 
   async function changePlan(id, plan) {
     try {
-      const res  = await fetch(`http://localhost:5000/api/admin/users/${id}/plan`, {
+      const res  = await fetch(`https://vidflow-ai-production.up.railway.app/api/admin/users/${id}/plan`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ plan }),
@@ -70,7 +70,7 @@ export default function Admin() {
   async function deleteUser(id) {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      const res  = await fetch(`http://localhost:5000/api/admin/users/${id}`, { method: "DELETE" });
+      const res  = await fetch(`https://vidflow-ai-production.up.railway.app/api/admin/users/${id}`, { method: "DELETE" });
       const data = await res.json();
       if (data.success) {
         setMsg("User deleted!");

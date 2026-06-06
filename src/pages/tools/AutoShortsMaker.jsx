@@ -46,7 +46,7 @@ export default function AutoShortsMaker() {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/shorts", {
+      const res = await fetch("https://vidflow-ai-production.up.railway.app/api/shorts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic, language, style }),

@@ -32,7 +32,7 @@ export default function SEOGenerator() {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/seo", {
+      const res = await fetch("https://vidflow-ai-production.up.railway.app/api/seo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic, script, language, videoType }),

@@ -40,7 +40,7 @@ export default function ThumbnailAI() {
     setResult("");
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/thumbnail", {
+      const res = await fetch("https://vidflow-ai-production.up.railway.app/api/thumbnail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic, niche }),

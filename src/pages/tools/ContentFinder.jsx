@@ -119,7 +119,7 @@ export default function ContentFinder() {
     setData(null);
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/topic", {
+      const res = await fetch("https://vidflow-ai-production.up.railway.app/api/topic", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ niche, goal }),
